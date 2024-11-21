@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator, MaxLeng
 # Create your models here.
 
 class Clientes(models.Model):
-    cedula = models.CharField(primary_key=True,max_length=10,unique=True,validators= [MinLengthValidator(10)])
+    cedula = models.CharField(primary_key=True,max_length=10,unique=True,validators= [MinLengthValidator(10)],validators= [MaxLengthValidator(10)])
     nombre = models.CharField(max_length=50,blank=False,verbose_name='Nombre del cliente',validators=[])
     apellido = models.CharField(max_length=50, blank=False)
     telefono = models.CharField(max_length=10)
